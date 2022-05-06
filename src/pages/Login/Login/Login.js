@@ -1,9 +1,58 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
   const navigate = useNavigate();
+  const emailRef = useRef("");
+  const passwordlRef = useRef("");
+  const location = useLocation();
+
+  //reset-passwword
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+  // sign in
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  //-----locathin proceed-------//
+  let from = location.state?.from?.pathname || "/";
+
+  // login
+  const handleLoginFrom = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordlRef.current.value;
+    signInWithEmailAndPassword(email, password);
+  };
+  if (error?.message) {
+    toast("Wrong Type");
+  }
+
+  if (loading || sending) {
+    <Loading></Loading>;
+  }
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+  //reset-passeord
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent Email");
+    } else {
+      toast("please Enter your Email");
+    }
+  };
 
   //navigate
   const navigatelogin = () => {
@@ -12,19 +61,27 @@ const Login = () => {
   return (
     <div className="w-50 pt-5 mx-auto">
       <h2 className="text-dark text-center mt-3">Pleace Login</h2>
-      <Form>
+      <Form onSubmit={handleLoginFrom}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" required />
+          <Form.Control
+            ref={emailRef}
+            type="email"
+            placeholder="Enter email"
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" required />
+          <Form.Control
+            ref={passwordlRef}
+            type="password"
+            placeholder="Password"
+            required
+          />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+
         <Button variant="dark" type="submit">
           Login
         </Button>
@@ -33,11 +90,20 @@ const Login = () => {
         New User A -
         <Link
           to="/register"
-          className="text-primary pe-auto text-decoration-none"
+          className="text-danger pe-auto text-decoration-none"
           onClick={navigatelogin}
         >
           Please Register
         </Link>
+      </p>
+      <p>
+        Forget Password?--
+        <button
+          className="text-danger pe-auto btn btn-link text-decoration-none"
+          onClick={resetPassword}
+        >
+          Reset Password
+        </button>
       </p>
     </div>
   );
