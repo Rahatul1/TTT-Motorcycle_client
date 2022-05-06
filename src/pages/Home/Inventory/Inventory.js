@@ -1,8 +1,15 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Inventory = ({ inventory }) => {
-  const { name, img, discription, price, quantity, sold } = inventory;
+  const { _id, name, img, discription, price, quantity, sold } = inventory;
+  const navigate = useNavigate();
+
+  const navigateToProductDetail = (id) => {
+    navigate(`/inventory/${id}`);
+  };
+
   return (
     <div className="g-2 pb-5 col-sm-12 col-md-6 col-lg-4">
       <div className="card-group">
@@ -27,7 +34,14 @@ const Inventory = ({ inventory }) => {
           </div>
           <div className="card-footer">
             <small className="text-muted">
-              <Button className="btn btn-dark w-100">Butoon</Button>
+              <>
+                <Button
+                  onClick={() => navigateToProductDetail(_id)}
+                  className="btn btn-dark w-100"
+                >
+                  Update
+                </Button>
+              </>
             </small>
           </div>
         </div>

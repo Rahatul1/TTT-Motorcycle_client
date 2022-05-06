@@ -1,0 +1,20 @@
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+}
+.component h6{
+    margin: 5px;
+    display:flex;
+    justify-content: space-between;
+}
+.foter-header{
+    background-color: rgb(255, 237, 237);
+    color: black;
+}
+
+@media only screen and (min-width: 368px) and (max-width: 876px) {
+    .foter-header{
+        display: flex;
+    }
+    
+}
