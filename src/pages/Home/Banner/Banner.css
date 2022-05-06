@@ -1,0 +1,22 @@
+.banner{
+    display: flex;
+}
+.banner-part{
+    padding-top: 10rem;
+}
+.images-part img{
+    padding-top: 10%;
+    height: 550px;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 786px){
+    .banner{
+        display: inline-block;
+    }
+    .images-part img{
+        height: 80vh;
+    }
+    .banner-part{
+        padding-top: 0;
+    }
+}
