@@ -5,8 +5,8 @@
     padding-top: 10rem;
 }
 .images-part img{
-    padding-top: 10%;
-    height: 550px;
+    padding-top: 5%;
+    height: 500px;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 786px){
@@ -14,7 +14,7 @@
         display: inline-block;
     }
     .images-part img{
-        height: 80vh;
+        height: 70vh;
     }
     .banner-part{
         padding-top: 0;

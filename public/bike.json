@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Yamaha XSR 155",
+        "img": "https://i.ibb.co/cYdgPJq/yamaha-xsr-155-first1.jpg",
+        "discription": "The bike uses a 155.1 cc engine, which is a single cylinder, liquid cooled, FI (fuel injection) engine with a maximum power of 19.3 HP @ 10,000 rpm, a maximum torque of 14.7 Nm @ 8500 rpm. This bike has 6 speed manual gear and its maximum speed is 145 kilometers per hour.",
+        "price": "520,000",
+        "quantity": "20",
+        "sold": "7"
+    },
+    {
+        "name": "Yamaha R15 V4",
+        "img": "https://i.ibb.co/7J743GS/yamaha-r15-v4-image01.jpg",
+        "discription": "Yamaha uses a 155cc engine in their bike, which is a liquid-cooled, 4-stroke, SOHC, 4-valve. It is capable of generating a maximum power of 13.5kW (18.4PS) / 10000 RPM and a maximum torque of 14.2 Nm (1.4 kgfm) @ 7,500 RPM. The fuel capacity of the bike is 11 liters",
+        "price": "570,000",
+        "quantity": "21",
+        "sold": "6"
+    },
+    {
+        "name": "Yamaha R15 v3 Indian",
+        "img": "https://i.ibb.co/M9bYNcJ/yamaha-r15-v3-monster-image1.jpg",
+        "discription": "The bike Yamaha R15 v3, available in Bangladesh market both of Indian and Indonesian version. The bike is a 155.1cc engine, which is single cylinder. Its maximum power is 19.3 HP @ 10,000 rpm and maximum torque 15 nm @ 8500 rpm. It has a 6-speed manual gear.",
+        "price": "470,000",
+        "quantity": "25",
+        "sold": "7"
+    },
+    {
+        "name": "Yamaha R15 v3 Monster",
+        "img": "https://i.ibb.co/Wf1Cn5z/yamaha-yzf-r15-v3-first1.jpg",
+        "discription": "The bike Yamaha R15 v3, available in Bangladesh market both of Indian and Indonesian version. The bike is a 155.1cc engine, which is single cylinder. Its maximum power is 19.3 HP @ 10,000 rpm and maximum torque 15 nm @ 8500 rpm.",
+        "price": "470,000",
+        "quantity": "15",
+        "sold": "4"
+    },
+    {
+        "name": "Yamaha R15 v3 Indonesian",
+        "img": "https://i.ibb.co/SrDhtrf/yamaha-r15-v3-indonesian-image1.jpg",
+        "discription": "The bike Yamaha R15 v3, available in Bangladesh market both of Indian and Indonesian version. The bike is a 155.1cc engine, which is single cylinder. Its maximum power is 19.3 HP @ 10,000 rpm and maximum torque 15 nm @ 8500 rpm. ",
+        "price": "500,000",
+        "quantity": "18",
+        "sold": "5"
+    },
+    {
+        "name": "Yamaha XSR 155 ABS",
+        "img": "https://i.ibb.co/6njGs57/yamaha-r15m-image01.jpg",
+        "discription": "Yamaha uses a 155cc engine in their bike, which is a liquid-cooled, 4-stroke, SOHC, 4-valve. It is capable of generating a maximum power of 13.5kW (18.4PS) / 10000 RPM and a maximum torque of 14.2 Nm (1.4 kgfm) @ 7,500 RPM.",
+        "price": "520,000",
+        "quantity": "22",
+        "sold": "3"
+    }
+]
+
+
+
+
+
+
+
+
