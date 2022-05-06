@@ -9,6 +9,7 @@ import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
@@ -107,6 +108,7 @@ const Register = () => {
           Please Login
         </Link>
       </p>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
