@@ -16,6 +16,9 @@ const Footer = () => {
             <h6>Inventory</h6>
             <h6>Blogs</h6>
             <h6>About</h6>
+            <h6>My Item</h6>
+            <h6>Add Item</h6>
+            <h6>Manage Item</h6>
           </div>
           <div className="images-icon">
             <img className="px-2" src={facebook} height="30px" alt="" />

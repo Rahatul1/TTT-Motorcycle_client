@@ -3,7 +3,8 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Inventory = ({ inventory }) => {
-  const { _id, name, img, discription, price, quantity, sold } = inventory;
+  const { _id, name, img, discription, price, quantity, sold, supplier } =
+    inventory;
   const navigate = useNavigate();
 
   const navigateToProductDetail = (id) => {
@@ -30,6 +31,9 @@ const Inventory = ({ inventory }) => {
             </p>
             <p className="card-text">
               <b>Sold</b> : {sold}
+            </p>
+            <p className="card-text">
+              <b>Supplier</b> : {supplier}
             </p>
           </div>
           <div className="card-footer">

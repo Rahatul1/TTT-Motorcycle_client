@@ -33,7 +33,7 @@ const Register = () => {
 
     await createUserWithEmailAndPassword(email, password, name);
     await updateProfile({ displayName: name });
-    toast("Updated Profile");
+    toast("Reagister success");
     navigate("/home");
   };
 

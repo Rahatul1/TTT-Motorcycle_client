@@ -69,7 +69,7 @@ const Login = () => {
             ref={emailRef}
             type="email"
             placeholder="Enter email"
-            required
+            requireds
           />
         </Form.Group>
 

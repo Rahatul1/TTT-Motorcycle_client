@@ -10,7 +10,7 @@ const ProductsDetail = () => {
   const [products, setProducts] = useProducts({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/produts/${id}`;
+    const url = `https://guarded-fjord-51404.herokuapp.com/produts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -19,7 +19,7 @@ const ProductsDetail = () => {
   //dalivay
   const handleDalivar = (id) => {
     console.log(id);
-    const url = `http://localhost:5000/produts/${id}`;
+    const url = `https://guarded-fjord-51404.herokuapp.com/produts/${id}`;
     console.log(url);
     fetch(url, {
       method: "PUT",
@@ -43,7 +43,7 @@ const ProductsDetail = () => {
     const quantityNum = {
       quantity: quantity,
     };
-    const url = `http://localhost:5000/ProductsDetail/${id}`;
+    const url = `https://guarded-fjord-51404.herokuapp.com/ProductsDetail/${id}`;
     console.log(url);
     fetch(url, {
       method: "PUT",

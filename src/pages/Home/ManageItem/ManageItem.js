@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import useProducts from "../../Hooks/useProducts";
 
@@ -11,7 +12,7 @@ const ManageItem = () => {
     const proceed = window.confirm("Are you sure you want to delete");
     if (proceed) {
       //
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://guarded-fjord-51404.herokuapp.com/products/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -59,6 +60,11 @@ const ManageItem = () => {
           </tbody>
         ))}
       </table>
+      <div className="text-center">
+        <Link to="/addItem">
+          <button className="btn btn-dark mb-5">Add new item</button>
+        </Link>
+      </div>
     </div>
   );
 };

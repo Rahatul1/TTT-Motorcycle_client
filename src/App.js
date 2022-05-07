@@ -45,10 +45,17 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route
+          path="/myItem"
+          element={
+            <RequireAuth>
+              <MyItem></MyItem>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/myItem" element={<MyItem></MyItem>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
