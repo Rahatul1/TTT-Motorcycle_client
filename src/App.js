@@ -12,6 +12,7 @@ import NotFound from "./pages/Shared/NotFound/NotFound";
 import RequireAuth from "./pages/Login/RequireAuth/RequireAuth";
 import AddItem from "./pages/Home/AddItem/AddItem";
 import ManageItem from "./pages/Home/ManageItem/ManageItem";
+import MyItem from "./pages/Home/MyItem/MyItem";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/myItem" element={<MyItem></MyItem>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />

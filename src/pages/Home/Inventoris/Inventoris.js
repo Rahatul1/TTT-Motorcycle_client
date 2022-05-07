@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
+import Accessories from "../Accessories/Accessories";
 import Inventory from "../Inventory/Inventory";
 import NewProducts from "../NewProducts/NewProducts";
 // import "./inventoris.css";
@@ -19,6 +20,7 @@ const Inventoris = () => {
         <button className="btn btn-dark">See More</button>
       </Link>
       <NewProducts></NewProducts>
+      <Accessories></Accessories>
     </div>
   );
 };

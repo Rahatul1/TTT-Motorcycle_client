@@ -20,7 +20,7 @@ const AddItem = () => {
 
   return (
     <div className="w-50 mx-auto">
-      <h2 className="text-center py-4">Produts Added</h2>
+      <h2 className="text-center py-4">Added Item</h2>
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           placeholder="Photo URL"
@@ -56,7 +56,11 @@ const AddItem = () => {
           type="number"
           {...register("slod")}
         />
-        <input className="w-50 mx-auto" value="Add Product" type="submit" />
+        <input
+          className="w-50 mx-auto btn btn-dark mt-3"
+          value="Add Item"
+          type="submit"
+        />
       </form>
     </div>
   );
