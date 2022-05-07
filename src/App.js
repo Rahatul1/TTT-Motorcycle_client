@@ -10,6 +10,8 @@ import ProductsDetail from "./pages/Home/ProductsDetail/ProductsDetail";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./pages/Shared/NotFound/NotFound";
 import RequireAuth from "./pages/Login/RequireAuth/RequireAuth";
+import AddItem from "./pages/Home/AddItem/AddItem";
+import ManageItem from "./pages/Home/ManageItem/ManageItem";
 
 function App() {
   return (
@@ -23,6 +25,22 @@ function App() {
           element={
             <RequireAuth>
               <ProductsDetail></ProductsDetail>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/addItem"
+          element={
+            <RequireAuth>
+              <AddItem></AddItem>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/manageItem"
+          element={
+            <RequireAuth>
+              <ManageItem></ManageItem>
             </RequireAuth>
           }
         ></Route>

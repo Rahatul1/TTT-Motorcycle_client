@@ -20,7 +20,7 @@ const Inventory = ({ inventory }) => {
             alt="..."
           />
           <div className="card-body">
-            <h5 className="card-title">Name: {name}</h5>
+            <h5 className="card-title text-center pb-3">{name}</h5>
             <h5 className="card-title">Price: {price}</h5>
             <p className="card-text">
               <b>discription</b> : {discription}
