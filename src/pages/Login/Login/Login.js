@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,23 +28,34 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
 
   // login
-  const handleLoginFrom = (event) => {
+  const handleLoginFrom = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordlRef.current.value;
-    signInWithEmailAndPassword(email, password);
+
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post(
+      "https://guarded-fjord-51404.herokuapp.com/login",
+      { email }
+    );
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
+  //error
   if (error?.message) {
     toast("Wrong Type");
   }
 
+  //loading
   if (loading || sending) {
     <Loading></Loading>;
   }
 
+  //navigate
   if (user) {
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   }
+
   //reset-passeord
   const resetPassword = async () => {
     const email = emailRef.current.value;

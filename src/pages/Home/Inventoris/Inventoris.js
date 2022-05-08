@@ -3,7 +3,6 @@ import useProducts from "../../Hooks/useProducts";
 import Accessories from "../Accessories/Accessories";
 import Inventory from "../Inventory/Inventory";
 import NewProducts from "../NewProducts/NewProducts";
-// import "./inventoris.css";
 
 const Inventoris = () => {
   const [inventoris] = useProducts();
@@ -11,7 +10,7 @@ const Inventoris = () => {
   return (
     <div id="inventoris" className="container">
       <h2 className="text-center py-5">Most Motor Bike :{inventoris.length}</h2>
-      <div className="inventoris-part row">
+      <div className="row">
         {inventoris.slice(0, 6).map((inventory) => (
           <Inventory key={inventory._id} inventory={inventory}></Inventory>
         ))}
