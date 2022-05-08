@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import axios from "axios";
+import useProducts from "../../Hooks/useProducts";
+import { toast } from "react-toastify";
 
 const MyItem = () => {
+  const [products, setProducts] = useProducts();
   const [myItem, setMyItem] = useState([]);
   const [user] = useAuthState(auth);
 
@@ -23,6 +26,25 @@ const MyItem = () => {
     };
     getItem();
   }, [user]);
+
+  //delete my item
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure you want to delete");
+    if (proceed) {
+      //
+      const url = `https://guarded-fjord-51404.herokuapp.com/products/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaining = products.filter((product) => product._id !== id);
+          setProducts(remaining);
+          toast("Delete Success");
+        });
+    }
+  };
 
   return (
     <div>
@@ -56,6 +78,12 @@ const MyItem = () => {
                     <b>Supplier</b> : {item.supplier}
                   </p>
                 </div>
+                <button
+                  onClick={() => handleDelete(item._id)}
+                  className="btn btn-dark "
+                >
+                  Delete item
+                </button>
               </div>
             </div>
           </div>
