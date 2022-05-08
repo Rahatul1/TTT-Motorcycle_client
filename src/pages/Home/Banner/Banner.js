@@ -1,13 +1,13 @@
 import React from "react";
-import image from "../../../Images/images.png";
+import image from "../../../Images/motorbike.jpg";
 import "./Banner.css";
 
 const Banner = () => {
   return (
     <div className="container">
       <div className="banner">
-        <div className="images-part pt-5">
-          <img src={image} className="rounded" alt="..." />
+        <div className="images-part pt-5 m-5 mx-auto">
+          <img src={image} className="rounded shadow-lg" alt="..." />
         </div>
         <div className="banner-part ">
           <h1>TTT Motorcycle</h1>

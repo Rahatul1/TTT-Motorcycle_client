@@ -6,7 +6,8 @@
 }
 .images-part img{
     padding-top: 5%;
-    height: 500px;
+    height: 400px;
+    border-radius: 30px;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 786px){
@@ -14,7 +15,7 @@
         display: inline-block;
     }
     .images-part img{
-        height: 70vh;
+        height: 50vh;
     }
     .banner-part{
         padding-top: 0;

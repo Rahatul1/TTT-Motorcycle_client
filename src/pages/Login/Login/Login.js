@@ -72,7 +72,7 @@ const Login = () => {
     navigate("/register");
   };
   return (
-    <div className="w-50 pt-5 mx-auto">
+    <div className="w-50 mx-auto">
       <h2 className="text-dark text-center mt-3">Pleace Login</h2>
       <Form onSubmit={handleLoginFrom}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
