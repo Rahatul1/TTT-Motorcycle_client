@@ -21,6 +21,9 @@ const Header = () => {
             <Nav className="me-auto">
               <Nav.Link href="/home#banner">Home</Nav.Link>
               <Nav.Link href="/home#inventoris">Inventoris</Nav.Link>
+              <Nav.Link as={Link} to="/blogs">
+                Blogs
+              </Nav.Link>
             </Nav>
             <Nav>
               {user && (
@@ -36,9 +39,7 @@ const Header = () => {
                   </Nav.Link>
                 </>
               )}
-              <Nav.Link as={Link} to="/blogs">
-                Blogs
-              </Nav.Link>
+
               {user ? (
                 ""
               ) : (

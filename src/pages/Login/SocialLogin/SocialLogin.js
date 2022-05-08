@@ -4,6 +4,7 @@ import auth from "../../../firebase.init";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
+import useToken from "../../Hooks/useToken";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ const SocialLogin = () => {
   //google sign
   const [signInWithGoogle, user, error, loading] = useSignInWithGoogle(auth);
 
+  //
+  const [token] = useToken(user);
   //
   let from = location.state?.from?.pathname || "/";
 
@@ -25,7 +28,7 @@ const SocialLogin = () => {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
   //-------------------//
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
 

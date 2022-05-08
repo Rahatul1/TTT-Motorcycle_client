@@ -10,6 +10,7 @@ import Loading from "../../Shared/Loading/Loading";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import useToken from "../../Hooks/useToken";
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
@@ -20,6 +21,8 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth, {
       sendEmailVerification: true,
     });
+  //
+  const [token] = useToken(user);
 
   //updateProfile
   const [updateProfile, updating] = useUpdateProfile(auth);
@@ -34,17 +37,18 @@ const Register = () => {
     await createUserWithEmailAndPassword(email, password, name);
     await updateProfile({ displayName: name });
     toast("Reagister success");
-    navigate("/home");
+    // navigate("/home");
   };
+  //
+  if (token) {
+    navigate("/home");
+  }
 
   // loading or updating
   if (loading || updating) {
     <Loading></Loading>;
   }
 
-  if (user) {
-    navigate("/home");
-  }
   //navigate
   const navigateRegister = () => {
     navigate("/login");

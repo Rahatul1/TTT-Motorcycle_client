@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import axios from "axios";
+// import axios from "axios";
+import useToken from "../../Hooks/useToken";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  //
+  const [token] = useToken(user);
+
   //-----locathin proceed-------//
   let from = location.state?.from?.pathname || "/";
 
@@ -34,13 +38,14 @@ const Login = () => {
     const password = passwordlRef.current.value;
 
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post(
-      "https://guarded-fjord-51404.herokuapp.com/login",
-      { email }
-    );
-    localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
+    // const { data } = await axios.post(
+    //   "https://guarded-fjord-51404.herokuapp.com/login",
+    //   { email }
+    // );
+    // localStorage.setItem("accessToken", data.accessToken);
+    // navigate(from, { replace: true });
   };
+
   //error
   if (error?.message) {
     toast("Wrong Type");
@@ -52,8 +57,8 @@ const Login = () => {
   }
 
   //navigate
-  if (user) {
-    // navigate(from, { replace: true });
+  if (token) {
+    navigate(from, { replace: true });
   }
 
   //reset-passeord
