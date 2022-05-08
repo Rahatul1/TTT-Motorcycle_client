@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import axios from "axios";
 
 const MyItem = () => {
   const [myItem, setMyItem] = useState([]);
@@ -10,12 +10,15 @@ const MyItem = () => {
   useEffect(() => {
     const getItem = async () => {
       const email = user?.email;
+      console.log(email);
       const url = `https://guarded-fjord-51404.herokuapp.com/myItem?email=${email}`;
+      //
       const { data } = await axios.get(url, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       });
+      console.log(data);
       setMyItem(data);
     };
     getItem();
